@@ -37,8 +37,10 @@ gulp.task('serve:dist', ['build'], () => {
 
 gulp.task('build', () => {
   console.log(argv);
-  return gulp.src('modules/module' + argv.module + '/*')
-    .pipe(gulp.dest('dist/module' + argv.module));
+  return gulp.src(`modules/module${argv.module}/*`)
+    .pipe(gulp.dest(`dist/module${argv.module}`))
+    .pipe($.zip(`module${argv.module}.zip`))
+    .pipe(gulp.dest(`dist/module${argv.module}`));
 });
 
 gulp.task('deploy', ['build'], () => {
