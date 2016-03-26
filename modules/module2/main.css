@@ -1,0 +1,38 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background: #FFF url(https://i.ytimg.com/vi/8sEXj0U5X8g/maxresdefault.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.clearfix{
+  clear: both;
+}
+.container {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 3rem;
+  box-shadow: 0px 0px 10px 3px #ccc;
+  background-color: #efedef;
+  background: linear-gradient(to bottom, rgba(205, 205, 255, 1) 0%, rgba(255, 255, 255, 0.7) 100%);
+  border-radius: 10px;
+}
+#title {
+  text-align: center;
+  color: #782;
+  text-shadow: 0px 0px 1px #333;
+}
+
+.list_section .html5_list{
+  float:left;
+  width:50%;
+}
+
+.list_section .html5_image{
+  float:right;
+  width:40%;
+}
