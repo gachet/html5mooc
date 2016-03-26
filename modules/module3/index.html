@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Date</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <h1 id="h1"></h1>
+  <p>Sergio Morcuende</p>
+  <h2 id="h2">La fecha y la hora son:</h2>
+  <div id="fecha"></div>
+
+  <div>
+
+    <h3 id="h2inner"></h3>
+    <h3 id="h1outer"></h3>
+
+    <h2>Contenido de de la propiedad global: location.href</h2>
+    <div id="href"></div>
+
+    <h2>Contenido de de la propiedad global: location</h2>
+    <div id="location"></div>
+
+    <h2>  Contenido de de las propiedades globales: screen.width y screen.heigth</h2>
+    <div id="size"></div>
+
+  </div>
+  <script type="text/javascript">
+    function getDate() {
+      var msj;
+      var fecha = new Date();
+      if (fecha.getHours() < 7) {
+        msj = "Buenas noches";
+      } else if (fecha.getHours() < 12) {
+        msj = "Buenos días";
+      } else if (fecha.getHours() < 21) {
+        msj = "Buenas tardes";
+      } else {
+        msj = "Buenas noches";
+      }
+      return {
+        fecha: fecha,
+        msj: msj
+      };
+    }
+    var interval = setInterval(function() {
+      document.getElementById("h1").innerHTML = getDate().msj;
+      document.getElementById("fecha").innerHTML = getDate().fecha;
+
+      document.getElementById("h2inner").innerHTML = document.getElementById("h2").innerHTML;
+      document.getElementById("h1outer").innerHTML = document.getElementById("h1").outerHTML;
+
+    }, 1000);
+
+    document.getElementById("href").innerHTML = location.href;
+    document.getElementById("location").innerHTML = JSON.stringify(location, null, 2);
+    document.getElementById("size").innerHTML = 'width(px): ' + screen.width + ', height(px): ' + screen.height;
+  </script>
+</body>
+
+</html>
