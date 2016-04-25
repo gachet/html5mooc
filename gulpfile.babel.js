@@ -37,16 +37,16 @@ gulp.task('serve:dist', ['build'], () => {
 
 gulp.task('build', () => {
   console.log(argv);
-  return gulp.src('modules/index.html')
-    .pipe(gulp.dest('dist/'))
-    .pipe(gulp.src(`modules/module${argv.module}/*`))
-    .pipe(gulp.dest(`dist/module${argv.module}`))
-    .pipe($.zip(`module${argv.module}.zip`))
-    .pipe(gulp.dest(`dist/module${argv.module}`));
+  return gulp.src(`./modules/module${argv.module}/*`)
+    .pipe(gulp.dest(`./dist/module${argv.module}`))
+    .pipe($.zip(`./module${argv.module}.zip`))
+    .pipe(gulp.dest(`./dist/module${argv.module}`))
+    .pipe(gulp.src(`./modules/*.html`))
+    .pipe(gulp.dest(`./dist`));
 });
 
 gulp.task('deploy', ['build'], () => {
-  return gulp.src('dist')
+  return gulp.src('./dist')
     .pipe($.subtree())
     .pipe($.clean());
 });
