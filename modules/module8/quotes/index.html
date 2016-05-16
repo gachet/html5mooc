@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML5MOOC - Module 8 - LocalStorage - Citas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/citas_slide.css">
+    <style type="text/css">
+      .panel-footer {
+        margin-top: 4rem;
+      }
+      * {
+        user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#miMenu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../">MOOC</a>
+          </div>
+          <div class="collapse navbar-collapse" id="miMenu">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="../">INICIO</a>
+              </li>
+              <li>
+                <a href="../puzzle">PUZZLE</a>
+              </li>
+              <li>
+                <a href="../calculator">CALCULADORA</a>
+              </li>
+              <li class="active">
+                <a href="../quotes">CITAS</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="contenido">
+        <nav>
+          <ul id="selector"></ul>
+        </nav>
+        <section id="caja">
+          <img id="foto" alt=""/>
+          <div class="textos">
+            <p id="frase"></p>
+            <p id="persona"></p>
+          </div>
+        </section>
+        <div class="editar" id="editar">
+          <img src="images/carat-d-white.svg" alt="" id="arrow_edit"/>
+          <section id="datos" class="hide">
+            <div contentEditable="true" id="persona_d"></div>
+            <div contentEditable="true" id="frase_d"></div>
+            <div contentEditable="true" id="foto_d"></div>
+            <div id="botones">
+              <ul>
+                <li><img src="images/edit-black.svg" alt="" id="guardar"/></li>
+                <li><img src="images/plus-black.svg" alt="" id="nuevo"/></li>
+                <li><img src="images/delete-black.svg" alt="" id="borrar"/></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div id="reset" class="disabled">
+        <button class="reset_button">Reset Storage</button>
+      </div>
+      <div class="panel-footer">Sergio Morcuende</div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+    <!-- <script src="js/jquery.js" charset="utf-8"></script> -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/galeria.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
