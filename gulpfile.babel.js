@@ -35,14 +35,17 @@ gulp.task('serve:dist', ['build'], () => {
   });
 });
 
-gulp.task('build', () => {
+gulp.task('copyindex', () => {
+  return gulp.src(`./modules/*.html`)
+    .pipe(gulp.dest(`./dist`));
+})
+
+gulp.task('build', ['copyindex'], () => {
   console.log(argv);
-  return gulp.src(`./modules/module${argv.module}/*`)
+  return gulp.src(`./modules/module${argv.module}/**/*`)
     .pipe(gulp.dest(`./dist/module${argv.module}`))
     .pipe($.zip(`./module${argv.module}.zip`))
-    .pipe(gulp.dest(`./dist/module${argv.module}`))
-    .pipe(gulp.src(`./modules/*.html`))
-    .pipe(gulp.dest(`./dist`));
+    .pipe(gulp.dest(`./dist/module${argv.module}`));
 });
 
 gulp.task('deploy', ['build'], () => {
