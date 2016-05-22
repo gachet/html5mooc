@@ -1,0 +1,59 @@
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Droid Sans", "Helvetica", Arial, sans-serif;
+  margin: 0;
+  padding: 0 0 6rem;
+  min-height: 100%;
+  position: relative;
+}
+header .title {
+  font-size: 48px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  min-height: 500px;
+  height: 100%;
+  width: 100%;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+#map {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  /* posición absoluta a navegador */
+  top: 7rem;
+  /* 50px debajo de borde de navegador */
+  left: 0;
+  /* ajusta a borde de navegador */
+  right: 0;
+  bottom: 0;
+  background: rgba(0,255,0,0.5);
+  /* verde si no hay mapa */
+  width: 80vw;
+  height: 70vh;
+  min-height: 400px;
+  margin: 0 auto;
+}
